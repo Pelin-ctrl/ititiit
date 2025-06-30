@@ -1,0 +1,357 @@
+
+body {
+    background-color: rgba(233, 153, 174, 1);  
+    color: white;
+    height: 100vh; /* Полная высота окна */
+    transition: all 1s ease;
+    overflow-y: scroll;
+    cursor: default;
+    overflow-x: hidden;
+    
+}
+.mainscreen {
+   position: relative;
+    width: 100%;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: visible;
+}
+
+
+.firstText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.firstText h1 {
+    font-family: 'Baymax', sans-serif;
+    font-size: 250px;
+    margin: 0;
+    color: white;
+}
+
+.firstText p {
+    font-family: 'IM Fell French Canon SC', serif;
+    font-size: 20px;
+    margin-top: 10px;
+    max-width: 600px;
+}
+header {
+    padding: 20px 0;
+    position: static; /* по умолчанию */
+    
+}
+
+.nav-buttons {
+    
+    flex-direction: row-reverse; /* справа налево */
+    justify-content: center;
+    gap: 170px; /* расстояние между кнопками */
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none; /* убираем подчеркивание */
+    font-size: 18px;
+    font-family: sans-serif; /* или любой другой шрифт */
+    transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+    color: #ccc; /* немного затемняется при наведении */
+}
+
+
+
+.melted-circle,
+.melted-circle2,
+.melted-wave {
+    position: absolute; /* вместо fixed */
+    z-index: -6;
+    pointer-events: none;
+}
+
+.melted-circle {
+    top: 10%;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    background: #FAED78;
+    border-radius: 50%;
+    z-index: 4;
+    filter: blur(10px) brightness(1.05);
+    box-shadow: 0 0 40px 10px #FAED78;
+    animation: floatWobble 3s ease-in-out infinite;
+}
+
+.melted-circle2 {
+    top: 80%;
+    right: 10px;
+    width: 200px;
+    height: 200px;
+    z-index: 4;
+    background: #FAED78;
+    border-radius: 50%;
+    filter: blur(10px) brightness(1.05);
+    box-shadow: 0 0 40px 10px #FAED78;
+    animation: floatWobble 3s ease-in-out infinite;
+    
+}
+
+.melted-wave {
+    top: -30px;
+    right: 0;
+    width: 1500px;
+}
+
+.melted-wave img {
+    width: 100%;
+    height: auto;
+
+}
+.content {
+    flex: 1; /* чтобы футер был внизу */
+  }
+  footer {
+    background: rgba(233, 153, 174, 1);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    box-shadow: 0 -4px 15px rgba(53, 122, 189, 0.6);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .footer-left h1{
+    font-size: 99px;
+    font-family: 'Baymax', sans-serif;
+    color: #ffffff;
+
+
+  }
+  .footer-left, .footer-center, .footer-right {
+    flex: 1;
+    font-size: 18px; /* или 20px, 24px — как тебе больше нравится */
+
+  }
+  .footer-left {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 2px;
+    user-select: none;
+  }
+  .footer-center {
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  }
+  .footer-right {
+    text-align: right;
+  }
+  form {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 30px;
+    box-shadow: inset 0 0 8px rgba(255,255,255,0.3);
+    transition: background 0.3s ease;
+  }
+  form:hover {
+    background: rgba(135, 197, 255, 0.3);
+  }
+  input[type="email"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    width: 180px;
+    padding: 8px 10px;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+  }
+  input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  input[type="email"]:focus {
+    width: 240px;
+  }
+  button {
+    background: #f3e444;
+    border: none;
+    color: #fff;
+    padding: 9px 18px;
+    margin-left: 12px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 127, 80, 0.6);
+    transition: background 0.3s ease, transform 0.15s ease;
+    display: flex;
+    align-items: center;
+  }
+  button:hover {
+    background: #ff6347;
+    transform: scale(1.05);
+  }
+  button:active {
+    transform: scale(0.95);
+  }
+  .message {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 18px;
+    user-select: none;
+  }
+  /* Иконка письма слева в кнопке */
+  button svg {
+    margin-left: 6px;
+    fill: white;
+    width: 18px;
+    height: 18px;
+  }
+
+/* Для экранов до 576px (мобильные) */
+@media (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .firstText h1 {
+    font-size: 80px;
+    margin-top: 60px; /* Добавляем отступ сверху */
+  }
+  
+  .firstText p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  header {
+    position: relative;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 1000;
+  }
+  
+  .nav-buttons {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+  }
+  
+  .nav-button {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  
+  footer {
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .footer-left h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .footer-center, 
+  .footer-right {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  form {
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  input[type="email"] {
+    width: 150px;
+    font-size: 14px;
+  }
+  
+  input[type="email"]:focus {
+    width: 180px;
+  }
+  
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .melted-circle,
+  .melted-circle2 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .melted-wave {
+    width: 100%;
+    top: -10px;
+  }
+  
+  .content {
+    flex: 1;
+    overflow: visible;
+  }
+}
+
+/* Для очень маленьких экранов до 400px */
+@media (max-width: 400px) {
+  .firstText h1 {
+    font-size: 60px;
+    margin-top: 80px; /* Увеличиваем отступ для хэдера */
+  }
+  
+  .firstText p {
+    font-size: 14px;
+  }
+  
+  .nav-buttons {
+    gap: 10px;
+  }
+  
+  .nav-button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  .footer-left h1 {
+    font-size: 40px;
+  }
+  
+  .melted-circle,
+  .melted-circle2 {
+    width: 80px;
+    height: 80px;
+  }
+  
+  footer {
+    padding: 10px;
+  }
+}

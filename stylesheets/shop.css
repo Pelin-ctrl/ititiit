@@ -1,0 +1,208 @@
+body {
+    background-color: rgba(233, 153, 174, 1);  
+    color: white;
+    height: 100vh; /* Полная высота окна */
+    transition: all 1s ease;
+    overflow-y: scroll;
+    cursor: default;
+    overflow-y: scroll;
+}
+.mainscreen {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* вместо center */
+    align-items: center;
+    text-align: center;
+    overflow: visible;
+    overflow-y: scroll;
+
+}
+ 
+header {
+    padding: 20px 0;
+    position: static; /* по умолчанию */
+    
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row-reverse; /* справа налево */
+    justify-content: center;
+    gap: 170px; /* расстояние между кнопками */
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none; /* убираем подчеркивание */
+    font-size: 18px;
+    font-family: sans-serif; /* или любой другой шрифт */
+    transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+    color: #ccc; /* немного затемняется при наведении */
+}
+
+
+
+.melted-circle,
+.melted-circle2,
+.melted-wave {
+    position: absolute; /* вместо fixed */
+    z-index: -6;
+    pointer-events: none;
+}
+
+.melted-circle {
+    top: 10%;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    background: #FAED78;
+    border-radius: 50%;
+    z-index: 4;
+    filter: blur(10px) brightness(1.05);
+    box-shadow: 0 0 40px 10px #FAED78;
+    animation: floatWobble 3s ease-in-out infinite;
+}
+
+.melted-circle2 {
+    top: 80%;
+    right: 10px;
+    width: 200px;
+    height: 200px;
+    z-index: 4;
+    background: #FAED78;
+    border-radius: 50%;
+    filter: blur(10px) brightness(1.05);
+    box-shadow: 0 0 40px 10px #FAED78;
+    animation: floatWobble 3s ease-in-out infinite;
+    
+}
+
+.melted-wave {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 1500px;
+}
+
+.melted-wave img {
+    width: 100%;
+    height: auto;
+
+}
+
+.cloud {
+    position: relative;  /* фиксируем относительно окна браузера */
+    width: 100vw;     /* ширина во весь экран */
+    max-width: 1500px; /* можно ограничить максимальную ширину, если нужно */
+    z-index: -1;      /* если нужно, чтобы была позади других элементов */
+}
+
+.cloud img {
+    width: 100%;
+    height: auto;
+    display: block; /* чтобы убрать возможные отступы */
+    
+}
+
+
+.products-row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 150px;
+    flex-wrap: nowrap;       /* не переносить на новую строку */
+    align-items: center;     /* вертикальное выравнивание по центру */
+  }
+  
+  .productone, .producttwo, .productthree {
+    width: 300px;
+    height: 375px;
+    perspective: 1200px;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;          /* чтобы карточки не сжимались */
+  }
+  
+  /* остальные стили без изменений */
+  .card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: transform 0.8s;
+  }
+  
+  .card-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+  
+  /* При наведении переворачиваем карточку */
+  .productone:hover .card-front,
+  .producttwo:hover .card-front,
+  .productthree:hover .card-front {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+  
+  .productone:hover .card-back,
+  .producttwo:hover .card-back,
+  .productthree:hover .card-back {
+    transform: rotateY(360deg);
+    z-index: 2;
+  }
+  
+  /* Чтобы картинки растягивались и не искажались */
+  .card-front img,
+  .card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .products-row2 {
+    display: flex;
+    gap: 30px;              /* расстояние между карточками */
+    justify-content: center; /* центрируем весь ряд по горизонтали */
+    padding: 150px;
+    flex-wrap: nowrap;      /* чтобы карточки не переносились */
+    align-items: center;    /* выравнивание по вертикали */
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .products-row3 {
+    display: flex;
+    gap: 30px;              /* Отступы между карточками */
+    justify-content: center; /* Центрируем весь ряд */
+    padding: 150px;
+    flex-wrap: nowrap;      /* Запрет переноса */
+    align-items: center;    /* Вертикальное выравнивание */
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .products-row,
+  .products-row2,
+  .products-row3 {
+    margin-bottom: 100px;
+  }
+ .products-row {
+    margin-top: 50px;
+  }
+
+
+
+

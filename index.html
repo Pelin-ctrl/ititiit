@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOLLY</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link type="image/x-icon" href="./img/icon.ico" rel="shortcut icon">
+</head>
+<body>
+    <!-- Фоновые декоративные элементы — вне .content -->
+    <header>
+        <div class="nav-buttons">
+          <a href="./review.html" class="nav-button">отзывы</a>
+            <a href="./shop.html" class="nav-button">магазин</a>
+            <a href="./prod.html" class="nav-button">о производстве</a>
+            <a href="./events.html" class="nav-button">события</a>
+            <a href="./index.html" class="nav-button current">главная</a>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="mainscreen">
+          <!-- Декор только для первого экрана -->
+          <div class="melted-circle"></div>
+          <div class="melted-circle2"></div>
+          <div class="melted-wave">
+            <img src="./img/Group 7.svg" alt="волна">
+          </div>
+    
+          <div class="firstText">
+            <h1>VOLLY</h1>
+            <p>магазин детских книг, который объединяет мир литературы и игры</p>
+          </div>
+                </div>
+              </div>
+        
+              <footer>
+                <div class="footer-left"><h1>VOLLY</h1></div>
+                <div class="footer-center">Контакты</div>
+                <div class="footer-right">
+                  <form id="contactForm" onsubmit="return sendEmail(event)" novalidate>
+                    <input type="email" id="email" placeholder="Ваш Email" required />
+                   
+                  </form>
+                  <div id="message" class="message"></div>
+                </div>
+              </footer>
+              
+              <script>
+              function sendEmail(event) {
+                event.preventDefault();
+                const emailInput = document.getElementById('email');
+                const messageDiv = document.getElementById('message');
+                const email = emailInput.value.trim();
+              
+                if (!email || !validateEmail(email)) {
+                  messageDiv.style.color = '#ff6b6b';
+                  messageDiv.textContent = 'Пожалуйста, введите корректный email.';
+                  return false;
+                }
+              
+                // Здесь можно добавить отправку на сервер или API
+              
+                messageDiv.style.color = '#7CFC00'; // светло-зеленый
+                messageDiv.textContent = `Спасибо! Сообщение отправлено на ${email}.`;
+              
+                emailInput.value = '';
+                return false;
+              }
+              
+              function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email.toLowerCase());
+              }
+              </script>
+
+
+</body>
+
+
+

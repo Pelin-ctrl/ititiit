@@ -1,0 +1,20 @@
+@import "reset.css";
+@import "content.css";
+@import "animation.css";
+@import "responsive.css";
+@import "events.css";
+@import "prod.css";
+@import "shop.css";
+@font-face {
+    font-family: "Baymax" ;
+    src: url("../fonts/Baymax.otf") format('otf');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IMFeFC" ;
+    src: url("../fonts/IMFeFC.ttf") format('ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+

@@ -1,0 +1,182 @@
+body {
+    background-color: rgba(233, 153, 174, 1);  
+    color: white;
+    height: 100vh; /* Полная высота окна */
+    transition: all 1s ease;
+    overflow-y: scroll;
+    cursor: default;
+    overflow-y: scroll;
+    
+}
+.mainscreen {
+    position: relative;
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     text-align: center;
+     overflow: visible;
+ }
+ 
+header {
+    padding: 20px 0;
+    position: static; /* по умолчанию */
+    
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row-reverse; /* справа налево */
+    justify-content: center;
+    gap: 170px; /* расстояние между кнопками */
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none; /* убираем подчеркивание */
+    font-size: 18px;
+    font-family: sans-serif; /* или любой другой шрифт */
+    transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+    color: #ccc; /* немного затемняется при наведении */
+}
+
+
+
+.melted-circle,
+.melted-circle2,
+.melted-wave {
+    position: absolute; /* вместо fixed */
+    z-index: -6;
+    pointer-events: none;
+}
+
+.melted-circle {
+    top: 10%;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    background: #FAED78;
+    border-radius: 50%;
+    z-index: 4;
+    filter: blur(10px) brightness(1.05);
+    box-shadow: 0 0 40px 10px #FAED78;
+    animation: floatWobble 3s ease-in-out infinite;
+}
+
+.melted-circle2 {
+    top: 80%;
+    right: 10px;
+    width: 200px;
+    height: 200px;
+    z-index: 4;
+    background: #FAED78;
+    border-radius: 50%;
+    filter: blur(10px) brightness(1.05);
+    box-shadow: 0 0 40px 10px #FAED78;
+    animation: floatWobble 3s ease-in-out infinite;
+    
+}
+
+.melted-wave {
+    top: -30px;
+    right: 0;
+    width: 1500px;
+}
+
+.melted-wave img {
+    width: 100%;
+    height: auto;
+
+}
+
+.firstlook {
+    position: absolute;       /* Позиционируем относительно .mainscreen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование по центру экрана */
+    z-index: 5;               /* Выше волны, но ниже интерфейса */
+  }
+  
+  .firstlook img {
+    max-width: 900px; /* или 70vw — 70% ширины экрана */
+    width: 300vw;
+    height: auto;
+  }
+
+
+  .work-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10% 80px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .work-image img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+  
+  .work-text {
+    flex: 1;
+    min-width: 300px;
+    padding-top: 120px; /* Было 200px — уменьшили */
+  }
+  
+  .work-text h2 {
+    position: relative;
+    top: -130px; /* Было -210px — синхронизируем */
+    font-size: 72px;
+    font-family: 'Baymax', sans-serif;
+    margin-bottom: 190px;
+    line-height: 1.3;
+  }
+  
+  .work-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: -190px; /* Поднимаем текст ближе к заголовку */
+  }
+  
+  .factory-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .factory-image img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+  
+  .factory-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .factory-text h2 {
+    font-size: 72px;
+    font-family: 'Baymax', sans-serif;
+    margin-bottom: 25px;
+    line-height: 1.3;
+  }
+  
+  .factory-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  

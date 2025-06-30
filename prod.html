@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOLLY</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link type="image/x-icon" href="./img/icon.ico" rel="shortcut icon">
+</head>
+<body>
+    <header>
+        <div class="nav-buttons">
+          <a href="./review.html" class="nav-button">отзывы</a>
+            <a href="./shop.html" class="nav-button">магазин</a>
+            <a href="./prod.html" class="nav-button">о производстве</a>
+            <a href="./events.html" class="nav-button">события</a>
+            <a href="./index.html" class="nav-button current">главная</a>
+        </div>
+    </header>
+    <div class="content">
+        <div class="mainscreen">
+            <!-- Декор -->
+            <div class="melted-circle"></div>
+            <div class="melted-circle2"></div>
+            <div class="melted-wave">
+              <img src="./img/Group 7.svg" alt="волна">
+            </div>
+          
+            <!-- Центрированное содержимое -->
+            <div class="firstlook">
+              <img src="./img/flook.png" alt="волна">
+            </div>
+          </div>
+
+          <div class="work-section">
+            <div class="work-image">
+              <img src="./img/slook.png" alt="фабрика Volly">
+            </div>
+            <div class="work-text">
+              <h2>Как устроиться на фабрику Volly?</h2>
+              <p>
+                Мы всегда рады новым членам команды!<br>
+                Чтобы устроиться к нам, просто отправьте заявку на электронную почту <strong>hr@volly.ru</strong> или заполните анкету на нашем сайте.<br><br>
+                Мы ищем ответственных и креативных людей, которые любят детей и игрушки. Опыт работы не обязателен — всему научим!
+              </p>
+            </div>
+          </div>
+          <section class="factory-info">
+            <div class="factory-text">
+              <h2>Что у нас есть?</h2>
+              <p>На фабрике Volly мы создали пространство, где комфорт сочетается с продуктивностью...</p>
+              <p>Каждый сотрудник может перекусить в мини-кафе, отдохнуть в лаунж-зоне...</p>
+              <p>Кроме того, регулярно проводим мастер-классы и создаём атмосферу настоящей сказки...</p>
+            </div>
+            <div class="factory-image">
+              <img src="./img/tlook.png" alt="Внутри фабрики Volly">
+            </div>
+          </section>
+          
+
+          <footer>
+            <div class="footer-left"><h1>VOLLY</h1></div>
+            <div class="footer-center">Контакты</div>
+            <div class="footer-right">
+              <form id="contactForm" onsubmit="return sendEmail(event)" novalidate>
+                <input type="email" id="email" placeholder="Ваш Email" required />
+                
+              </form>
+              <div id="message" class="message"></div>
+            </div>
+          </footer>
+          
+          <script>
+          function sendEmail(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('email');
+            const messageDiv = document.getElementById('message');
+            const email = emailInput.value.trim();
+          
+            if (!email || !validateEmail(email)) {
+              messageDiv.style.color = '#ff6b6b';
+              messageDiv.textContent = 'Пожалуйста, введите корректный email.';
+              return false;
+            }
+          
+            // Здесь можно добавить отправку на сервер или API
+          
+            messageDiv.style.color = '#7CFC00'; // светло-зеленый
+            messageDiv.textContent = `Спасибо! Сообщение отправлено на ${email}.`;
+          
+            emailInput.value = '';
+            return false;
+          }
+          
+          function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email.toLowerCase());
+          }
+          </script>
+    </div>
+    
+</body>
+</html>
